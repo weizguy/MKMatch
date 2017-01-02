@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>Mortal Kombat - memory matching game</title>
+    <meta name="description" content="Memory card matching game based on the Mortal Kombat series">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>    
+	function openCharScreen() {
+    //document.getElementById("charScreen").style.height = "100%";
+    $("#charScreen").height('100%');
+    $(".choice").fadeIn(5000);
+	}
+
+	function closeCharScreen() {
+    $("#charScreen").height('0%');
+	}
+	</script>
+</head>
+<body onload="openCharScreen()">
+
+    <div class="wrap">
+	<div class="game"></div>	
+	<div class="modal-overlay">
+		<div class="modal">
+			<button class="restart">Play Again?</button>
+			<h1>LONGEST WINNING STREAKS</h1>
+			<hr>
+			<table width="100%">
+  <tr>
+    <th>FIGHTER!</th>
+    <th>WIN STREAK</th>
+    <th>ACCURACY</th>
+  </tr>
+  <tr>
+    <td>1.  SCORPION</td>
+    <td align="center">10 WINS</td>
+    <td align="right">100%</td>
+  </tr>
+  <tr>
+    <td>2.  SUB ZERO</td>
+    <td align="center">8 WINS</td>
+    <td align="right">75%</td>
+  </tr>
+  <tr>
+    <td>3.  RAIDEN</td>
+    <td align="center">6 WINS</td>
+    <td align="right">75%</td>
+  </tr>
+  <tr>
+    <td>4.  KANO</td>
+    <td align="center">5 WINS</td>
+    <td align="right">66%</td>
+  </tr>
+  <tr>
+    <td>5.  KITANA</td>
+    <td align="center">4 WINS</td>
+    <td align="right">33%</td>
+  </tr>
+</table>
+
+		</div>
+	</div>
+
+
+  </div><!-- End Wrap -->
+</div>
+
+
+<div id="charScreen" class="overlay">
+  
+  <div class="overlay-content centerImage" style="background-image: url(images/mkscreen.jpg); background-position:center; background-repeat:no-repeat;" onclick="closeCharScreen()">
+
+  <h1 class="choice">CHOOSE YOUR FIGHTER!</h1>
+
+<img src="images/liukang.jpg" width="200px" class="choose choice">
+<img src="images/kunglao.jpg" width="200px" class="choose choice">
+<img src="images/johnnycage.jpg" width="200px" class="choose choice">
+<img src="images/reptile.jpg" width="200px" class="choose choice">
+<br>
+
+<img src="images/subzero.jpg" width="200px" class="choose choice">
+<img src="images/kano.jpg" width="200px" class="choose choice">
+<img src="images/kitana.jpg" width="200px" class="choose choice">
+<img src="images/jax.jpg" width="200px" class="choose choice">
+<br>
+
+<img src="images/mileena.jpg" width="200px" class="choose choice">
+<img src="images/baraka.jpg" width="200px" class="choose choice">
+<img src="images/scorpion.jpg" width="200px" class="choose choice">
+<img src="images/raiden.jpg" width="200px" class="choose choice">
+
+</div>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/script.js"></script>    
+</body>
+</html>
