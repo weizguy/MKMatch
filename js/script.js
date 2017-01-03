@@ -42,6 +42,10 @@
 					game.guess = $(this).attr("data-id");
 				} else if(game.guess == $(this).attr("data-id") && !$(this).hasClass("picked")){
 					$(".picked").addClass("matched");
+					attempts ++;
+					matchCount++;
+					accuracy = Math.round(matchCount / attempts * 100); //percentage
+					displayStats();
 					game.guess = null;
 				} else {
 					game.guess = null;
@@ -49,6 +53,9 @@
 					setTimeout(function(){
 						$(".picked").removeClass("picked");
 						Memory.paused = false;
+						attempts ++;
+						accuracy = Math.round(matchCount / attempts * 100); //percentage
+						displayStats();
 					}, 600);
 				}
 				if($(".matched").length == $(".card").length){
@@ -58,6 +65,7 @@
 		},
 
 		win: function(){
+			gamesPlayed ++;
 			this.paused = true;
 			setTimeout(function(){
 				Memory.showModal();
@@ -81,6 +89,10 @@
 			this.shuffleCards(this.cardsArray);
 			this.setup();
 			openCharScreen();
+			attempts = 0;
+			accuracy = 0;
+			matchCount = 0;
+			displayStats();
     		$(".choice").fadeIn(5000);
 		},
 
@@ -101,7 +113,7 @@
 		},
 
 		buildHTML: function(){
-			var frag = '';
+			var frag = '<header><div id="char">Mortal Kombat</div><ul><li><img src="images/logo.png" id="logo" onclick="resetGame()"></li>	<li><a href="#">STATS: </a></li><li><a href="#">Games Played</a><div id="gamesPlayed"></div></li><li><a href="#">Accuracy</a><div id="accuracy"></div></li><li><a href="#">Attempts</a><div id="attempts"></div></li><li><img src="images/logo.png" id="logo" onclick="resetGame()"></li></ul></header>';
 			this.$cards.each(function(k, v){
 				frag += '<div class="card" data-id="'+ v.id +'"><div class="inside">\
 				<div class="front"><img src="'+ v.img +'"\
@@ -182,3 +194,38 @@
 
 
 })();
+
+function openCharScreen() {
+	//document.getElementById("charScreen").style.height = "100%";
+	$("#charScreen").height('100%');
+	$(".choice").fadeIn(5000);
+}
+
+function resetGame() {
+	gamesPlayed ++;
+	attempts = 0;
+	accuracy = 0;
+	matchCount = 0;
+	displayStats();
+}
+var char = "";
+	function closeCharScreen(name) {
+		char = name;
+		$('#char').html(char);
+		$("#charScreen").height('0%');
+	}
+
+var attempts = 0, accuracy = 0, gamesPlayed = 0, matchCount = 0;
+function displayStats() {
+	$('#attempts').text(attempts);
+	$('#accuracy').text(accuracy + '%');
+	$('#gamesPlayed').text(gamesPlayed);
+}
+
+$(document).ready(function () {
+	displayStats();
+	if (screen.width < 500) {
+		$('.choose').css('height', '18vh');
+	}else
+		$('.choose').css('height', '25vh');
+});

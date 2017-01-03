@@ -1,0 +1,8 @@
+
+
+
+- The main game screen should have a header / footer / sidebar that displays at least the following additional information:
+  - The app logo
+  - The selected fighter
+  - Running statistics
+  - A link to reset the game

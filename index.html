@@ -8,16 +8,7 @@
     <meta name="description" content="Memory card matching game based on the Mortal Kombat series">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script>    
-	function openCharScreen() {
-    //document.getElementById("charScreen").style.height = "100%";
-    $("#charScreen").height('100%');
-    $(".choice").fadeIn(5000);
-	}
-
-	function closeCharScreen() {
-    $("#charScreen").height('0%');
-	}
+    <script>
 	</script>
 </head>
 <body onload="openCharScreen()">
@@ -27,7 +18,7 @@
 	<div class="modal-overlay">
 		<div class="modal">
 			<button class="restart">Play Again?</button>
-			<h1>LONGEST WINNING STREAKS</h1>
+			<h2>LONGEST WINNING STREAKS</h2>
 			<hr>
 			<table width="100%">
   <tr>
@@ -72,26 +63,26 @@
 
 <div id="charScreen" class="overlay">
   
-  <div class="overlay-content centerImage" style="background-image: url(images/mkscreen.jpg); background-position:center; background-repeat:no-repeat;" onclick="closeCharScreen()">
+  <div class="overlay-content centerImage" style="background-image: url(images/mkscreen.jpg); background-position:center; background-repeat:no-repeat;">
 
   <h1 class="choice">CHOOSE YOUR FIGHTER!</h1>
 
-<img src="images/liukang.jpg" width="200px" class="choose choice">
-<img src="images/kunglao.jpg" width="200px" class="choose choice">
-<img src="images/johnnycage.jpg" width="200px" class="choose choice">
-<img src="images/reptile.jpg" width="200px" class="choose choice">
+<img src="images/liukang.jpg" class="choose choice" title="Liu Kang" onclick="closeCharScreen('Liu Kang')">
+<img src="images/kunglao.jpg" class="choose choice" onclick="closeCharScreen('Kung Lao')">
+<img src="images/johnnycage.jpg" class="choose choice" onclick="closeCharScreen('Johnny Cage')">
+<img src="images/reptile.jpg" class="choose choice" onclick="closeCharScreen('Reptile')">
 <br>
 
-<img src="images/subzero.jpg" width="200px" class="choose choice">
-<img src="images/kano.jpg" width="200px" class="choose choice">
-<img src="images/kitana.jpg" width="200px" class="choose choice">
-<img src="images/jax.jpg" width="200px" class="choose choice">
+<img src="images/subzero.jpg" class="choose choice" onclick="closeCharScreen('Sub Zero')">
+<img src="images/kano.jpg" class="choose choice" onclick="closeCharScreen('Kano')">
+<img src="images/kitana.jpg" class="choose choice" onclick="closeCharScreen('Kitana')">
+<img src="images/jax.jpg" class="choose choice" onclick="closeCharScreen('Jax')">
 <br>
 
-<img src="images/mileena.jpg" width="200px" class="choose choice">
-<img src="images/baraka.jpg" width="200px" class="choose choice">
-<img src="images/scorpion.jpg" width="200px" class="choose choice">
-<img src="images/raiden.jpg" width="200px" class="choose choice">
+<img src="images/mileena.jpg" class="choose choice" onclick="closeCharScreen('Mileena')">
+<img src="images/baraka.jpg" class="choose choice" onclick="closeCharScreen('Baraka')">
+<img src="images/scorpion.jpg" class="choose choice" onclick="closeCharScreen('Scorpion')">
+<img src="images/raiden.jpg" class="choose choice" onclick="closeCharScreen('Raiden')">
 
 </div>
 
